@@ -1,0 +1,33 @@
+.buttons-port {
+    display: block;
+    display: flex;
+    justify-content: center;
+
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding-left: 0;
+}
+
+.buttons-port .item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.buttons-port .button-portfolio {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.63;
+    letter-spacing: 0.03em;
+    background: var(--team-background-color);
+    border-color: transparent;
+    border-radius: 4px;
+    padding: 6px 22px;
+    cursor: pointer;
+}
+
+.buttons-port .button-portfolio:hover,
+.buttons-port .button-portfolio:focus {
+    color: var(--main-white-color);
+    background-color: var(--main-blue-color);
+    box-shadow: var(--button-portfolio-shadow);
+}
