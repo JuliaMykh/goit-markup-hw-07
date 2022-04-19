@@ -57,34 +57,33 @@
     display: block;
     display: flex;
     margin-top: 20px;
-}
 
-.social-network-list .item:not(:last-child) {
-    margin-right: 10px;
+    .item:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    .link {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: block;
+        display: flex;
+        transition: background-color 250ms var(--timing-function);
+    }
+
+    .link:hover,
+    .link:focus {
+        background-color: var(--main-blue-color);
+    }
 }
 
 .icon-footer {
     fill: var(--main-white-color);
     margin: auto auto;
-}
-
-.social-network-list .link {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    display: block;
-    display: flex;
-
-    transition: background-color 250ms var(--timing-function);
-}
-
-.social-network-list .link:hover,
-.social-network-list .link:focus {
-    background-color: var(--main-blue-color);
 }
 
 .subscribe-footer {
@@ -143,15 +142,15 @@
     color: rgba(255, 255, 255, 0.6);
     background-color: #2F303A;
     padding-left: 16px;
-}
 
-.user-email-input::placeholder {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.25;
-    letter-spacing: 0.03em;
-    color: var(--footer-mail-tel-color);
+    &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 0.03em;
+        color: var(--footer-mail-tel-color);
 
+    }
 }
 
 .user-email-wrapper {

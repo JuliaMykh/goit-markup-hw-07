@@ -8,17 +8,19 @@
 
     margin-left: -30px;
     margin-top: -30px;
+
+    .item {
+        margin-left: 30px;
+        margin-top: 30px;
+        flex-basis: calc(100% / 3 - 30px);
+    }
+
+    .item:hover {
+        box-shadow: var(--portfolio-cards-shadow);
+    }
 }
 
-.portfolio-list .item {
-    margin-left: 30px;
-    margin-top: 30px;
-    flex-basis: calc(100% / 3 - 30px);
-}
 
-.portfolio-list .item:hover {
-    box-shadow: var(--portfolio-cards-shadow);
-}
 
 .link-porfolio .header-portfolio {
     color: var(--header-color);
@@ -65,14 +67,14 @@
     width: 100%;
     height: 100%;
     background-color: var(--product-card-overlay);
-}
+    
+    .tehnocrak:hover & {
+        transform: translateY(0%);
+    }
 
-.tehnocrak:hover .product-overlay {
-    transform: translateY(0%);
-}
-
-.link-porfolio:focus .product-overlay {
-    transform: translateY(0%);
+    .link-porfolio:focus & {
+        transform: translateY(0%);
+    }
 }
 
 .container-content-overlay {

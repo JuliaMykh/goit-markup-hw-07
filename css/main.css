@@ -111,6 +111,16 @@ p {
   margin-left: 93px;
 }
 
+.site-nav .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.site-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
 .contacts {
   display: block;
   display: flex;
@@ -125,6 +135,7 @@ p {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  color: var(--text-color);
 }
 
 .contacts .item:first-child {
@@ -139,16 +150,6 @@ p {
   align-items: center;
 }
 
-.site-nav .item:not(:last-child) {
-  margin-right: 50px;
-}
-
-.site-nav .link {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
 .site-nav .link,
 .contacts .link {
   color: var(--header-color);
@@ -159,18 +160,13 @@ p {
   transition: background-color 250ms var(--timing-function);
 }
 
-.contacts .link {
-  color: var(--text-color);
-}
-
 .icon-envelope {
   margin-right: 10px;
   fill: currentColor;
   transition: color 250ms var(--timing-function);
 }
 
-.icon-envelope:hover,
-.icon-envelope:focus {
+.icon-envelope:hover, .icon-envelope:focus {
   color: var(--main-blue-color);
 }
 
@@ -400,15 +396,15 @@ p {
   transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
-.icon {
-  fill: currentColor;
-  margin: auto auto;
-}
-
 .name-social-link .link:hover,
 .name-social-link .link:focus {
   color: var(--main-white-color);
   background-color: var(--main-blue-color);
+}
+
+.icon {
+  fill: currentColor;
+  margin: auto auto;
 }
 
 .clients {
@@ -436,14 +432,13 @@ p {
   transition: border 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
-.icon-clients {
-  fill: currentColor;
-}
-
-.button-clients:hover,
-.button-clients:focus {
+.button-clients:hover, .button-clients:focus {
   border: 1px solid var(--main-blue-color);
   color: var(--main-blue-color);
+}
+
+.icon-clients {
+  fill: currentColor;
 }
 
 .main-footer {
@@ -509,11 +504,6 @@ p {
   margin-right: 10px;
 }
 
-.icon-footer {
-  fill: var(--main-white-color);
-  margin: auto auto;
-}
-
 .social-network-list .link {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 0;
@@ -530,6 +520,11 @@ p {
 .social-network-list .link:hover,
 .social-network-list .link:focus {
   background-color: var(--main-blue-color);
+}
+
+.icon-footer {
+  fill: var(--main-white-color);
+  margin: auto auto;
 }
 
 .subscribe-footer {
@@ -729,10 +724,6 @@ p {
   pointer-events: none;
 }
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
-}
-
 .modal {
   position: relative;
   position: absolute;
@@ -744,6 +735,10 @@ p {
   height: 581px;
   background-color: var(--main-white-color);
   padding: 40px;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .button-modal {

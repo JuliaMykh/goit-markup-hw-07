@@ -8,10 +8,10 @@
 
 .job-list {
     display: flex;
-}
 
-.job-list .item:not(:last-child) {
-    margin-right: 30px;
+    .item:not(:last-child) {
+        margin-right: 30px;
+    }
 }
 
 .job-image {

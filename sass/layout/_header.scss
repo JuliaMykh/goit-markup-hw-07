@@ -22,7 +22,18 @@
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 93px;
+
+    .item:not(:last-child) {
+        margin-right: 50px;
+    }
+
+    .link {
+        display: block;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
 }
+
 
 .contacts {
     display: block;
@@ -32,16 +43,17 @@
     margin-bottom: 0;
     margin-left: auto;
     align-items: center;
-}
 
-.contacts .link {
-    display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
-}
+    .link {
+        display: block;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        color: var(--text-color);
+    }
 
-.contacts .item:first-child {
-    margin-right: 30px;
+    .item:first-child {
+        margin-right: 30px;
+    }
 }
 
 .main-nav,
@@ -50,16 +62,6 @@
 .contacts .envelope {
     display: flex;
     align-items: center;
-}
-
-.site-nav .item:not(:last-child) {
-    margin-right: 50px;
-}
-
-.site-nav .link {
-    display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
 }
 
 .site-nav .link,
@@ -73,20 +75,16 @@
     transition: background-color 250ms var(--timing-function);
 }
 
-.contacts .link {
-    color: var(--text-color);
-}
 
 .icon-envelope {
     margin-right: 10px;
     fill: currentColor;
-
     transition: color 250ms var(--timing-function);
-}
 
-.icon-envelope:hover,
-.icon-envelope:focus {
-    color: var(--main-blue-color);
+    &:hover,
+    &:focus {
+        color: var(--main-blue-color);
+    }
 }
 
 .icon-smartphone {
@@ -111,20 +109,21 @@
     color: var(--main-blue-color);
 
     position: relative;
-}
 
-.link.current::after {
-    position: absolute;
-    left: 0;
-    bottom: 0;
 
-    content: '';
-    display: block;
-    width: 100%;
-    height: 5px;
-    background-color: var(--main-blue-color);
-}
+    &::after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
 
-.link.current:hover::after {
-    width: 100%;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: var(--main-blue-color);
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
 }

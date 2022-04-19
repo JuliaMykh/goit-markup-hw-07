@@ -5,10 +5,10 @@
 .list-clients {
     display: flex;
     margin-top: 50px;
-}
 
-.list-clients .item:not(:last-child) {
-    margin-right: 30px;
+    .item:not(:last-child) {
+        margin-right: 30px;
+    }
 }
 
 .button-clients {
@@ -22,14 +22,18 @@
     cursor: pointer;
 
     transition: border 250ms var(--timing-function), color 250ms var(--timing-function);
+
+
+    &:hover,
+    &:focus {
+        border: 1px solid var(--main-blue-color);
+        color: var(--main-blue-color);
+    }
+
 }
+
 
 .icon-clients {
     fill: currentColor;
 }
 
-.button-clients:hover,
-.button-clients:focus {
-    border: 1px solid var(--main-blue-color);
-    color: var(--main-blue-color);
-}

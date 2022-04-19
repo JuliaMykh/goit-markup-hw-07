@@ -14,16 +14,18 @@
 
 .team-list {
     display: flex;
+
+    .item {
+        box-shadow: var(--team-list-shadow);
+        border-radius: 0px 0px 4px 4px;
+    }
+
+    .item:not(:last-child) {
+        margin-right: 30px;
+    }
 }
 
-.team-list .item {
-    box-shadow: var(--team-list-shadow);
-    border-radius: 0px 0px 4px 4px;
-}
 
-.team-list .item:not(:last-child) {
-    margin-right: 30px;
-}
 
 .name {
     font-weight: 500;
@@ -48,24 +50,30 @@
     display: block;
     display: flex;
     justify-content: center;
-}
 
-.name-social-link .item-link:not(:last-child) {
-    margin-right: 10px;
-}
+    .item-link:not(:last-child) {
+        margin-right: 10px;
+    }
 
-.name-social-link .link {
-    color: var(--icon-color);
-    padding: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    display: block;
-    display: flex;
+    .link {
+        color: var(--icon-color);
+        padding: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: block;
+        display: flex;
 
-    transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
+        transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
+    }
+
+    .link:hover,
+    .link:focus {
+        color: var(--main-white-color);
+        background-color: var(--main-blue-color);
+    }
 }
 
 .icon {
@@ -73,8 +81,3 @@
     margin: auto auto;
 }
 
-.name-social-link .link:hover,
-.name-social-link .link:focus {
-    color: var(--main-white-color);
-    background-color: var(--main-blue-color);
-}
