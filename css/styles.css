@@ -26,7 +26,9 @@
     --placeholder-color: rgba(117, 117, 117, 0.5);
     --job-list-color: rgba(47, 48, 58, 0.8);
 
-    rgba(255, 255, 255, 0.1);
+    --social-network-bgc: rgba(255, 255, 255, 0.1);
+    --user-mail-input-border: rgba(255, 255, 255, 0.3);
+    
 }
 
 body {
@@ -56,6 +58,20 @@ p {
     margin-bottom: 0;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+}
+
 .section-title {
     color: var(--header-color);
     font-weight: 700;
@@ -77,12 +93,6 @@ p {
     margin-right: auto;
 }
 
-/*========= Хедер =========*/
-.header {
-    background-color: var(--main-contrast-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
 .logo {
     color: var(--main-active-color);
     font-family: raleway, sans-serif;
@@ -91,8 +101,47 @@ p {
     line-height: 1.19;
 }
 
-.logo-black {
+.logo__dark {
     color: var(--header-color);
+}
+
+.logo__light {
+    color: var(--main-contrast-color);
+}
+
+.button {
+    color: var(--main-contrast-color);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    background-color: var(--main-active-color);
+
+    display: inline-block;
+    min-width: 200px;
+    max-height: 50px;
+    box-shadow: 0px 4px 4px var(--button-hero-shadow);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.hero__btn {
+padding: 10px 32px;
+}
+
+.user-email-wrapper__btn{
+    padding: 5px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+}
+/*========= Хедер =========*/
+.header {
+    background-color: var(--main-contrast-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .site-nav {
@@ -102,6 +151,49 @@ p {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 93px;
+}
+
+.site-nav__item:not(:last-child) {
+    margin-right: 50px;
+}
+
+.site-nav__link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    color: var(--header-color);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    transition: background-color 250ms var(--timing-function);
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus {
+    color: var(--main-active-color);
+}
+
+.site-nav__link--current {
+    color: var(--main-active-color);
+    position: relative;
+}
+
+.site-nav__link--current::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: var(--main-active-color);
+}
+
+.site-nav__link--current:hover::after {
+    width: 100%;
 }
 
 .contacts {
@@ -114,100 +206,57 @@ p {
     align-items: center;
 }
 
-.contacts .link {
-    display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
-}
-
-.contacts .item:first-child {
+.contacts__item:first-child {
     margin-right: 30px;
 }
-
-.main-nav,
-.main-part,
-.contacts .smartphone,
-.contacts .envelope {
-    display: flex;
-    align-items: center;
-}
-
-.site-nav .item:not(:last-child) {
-    margin-right: 50px;
-}
-
-.site-nav .link {
+.contacts__link {
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
-}
 
-.site-nav .link,
-.contacts .link {
     color: var(--header-color);
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-
     transition: background-color 250ms var(--timing-function);
-}
 
-.contacts .link {
     color: var(--text-color);
 }
 
-.icon-envelope {
+.contacts__link:hover,
+.contacts__link:focus {
+    color: var(--main-active-color);
+}
+
+
+.header__nav,
+.header__container,
+.contacts__link--envelope,
+.contacts__link--smartphone {
+    display: flex;
+    align-items: center;
+}
+
+.contacts__icon--envelope {
     margin-right: 10px;
     fill: currentColor;
 
     transition: color 250ms var(--timing-function);
 }
 
-.icon-envelope:hover,
-.icon-envelope:focus {
+.contacts__icon--envelope:hover,
+.contacts__icon--envelope:focus {
     color: var(--main-active-color);
 }
 
-.icon-smartphone {
+.contacts__icon--smartphone {
     margin-right: 10px;
     fill: currentColor;
 
     transition: background-color 250ms var(--timing-function);
 }
 
-.contacts .link:hover,
-.contacts .link:focus,
-.site-nav .link:hover,
-.site-nav .link:focus,
-.footer-contacts .link:hover,
-.footer-contacts .link:focus,
-.address .address-link:hover,
-.address .address-link:focus {
-    color: var(--main-active-color);
-}
-
-.link.current {
-    color: var(--main-active-color);
-
-    position: relative;
-}
-
-.link.current::after {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    content: '';
-    display: block;
-    width: 100%;
-    height: 5px;
-    background-color: var(--main-active-color);
-}
-
-.link.current:hover::after {
-    width: 100%;
-}
 
 /*======== Герой =======*/
 .hero {
@@ -226,25 +275,6 @@ p {
     text-transform: uppercase;
 }
 
-.button {
-    color: var(--main-contrast-color);
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-    letter-spacing: 0.06em;
-    background-color: var(--main-active-color);
-
-    display: inline-block;
-    padding: 10px 32px;
-    min-width: 200px;
-    max-height: 50px;
-    box-shadow: 0px 4px 4px var(--button-hero-shadow);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
 .overlay {
     max-width: 1600px;
     margin-left: auto;
@@ -259,19 +289,16 @@ p {
 
 /*======== Наши приемущества ========*/
 
-.h2-title-benefits {
-    display: none;
-}
 
-.benefits-list {
+.benefits {
     display: flex;
 }
 
-.benefits-list .item:not(:last-child) {
+.benefits__item:not(:last-child) {
     margin-right: 30px;
 }
 
-.benefits {
+.benefits__title {
     font-size: 14px;
     line-height: 1.14;
     text-align: left;
@@ -280,12 +307,12 @@ p {
     margin-bottom: 10px;
 }
 
-.benefits-text {
+.benefits__text {
     font-size: 14px;
     line-height: 1.7;
 }
 
-.benefits-list-icon {
+.benefits__wrapper {
     width: 270px;
     height: 120px;
     background: #f5f4fa;
@@ -295,28 +322,43 @@ p {
     justify-content: center;
 }
 
-/*======== Чем мы занимаемcя =======*/
-.section-title.job {
-    margin-bottom: 50px;
+.benefits__icon {
+    margin: auto auto;
 }
 
-.job {
+/*======== Чем мы занимаемcя =======*/
+
+.job-section {
     padding-top: 0;
 }
 
-.job-list {
+.job-title {
+    margin-bottom: 50px;
+}
+.job {
     display: flex;
 }
 
-.job-list .item:not(:last-child) {
+.job__item:not(:last-child) {
     margin-right: 30px;
 }
 
-.job-image {
+.job__image {
     display: block;
 }
 
-.job-list-overlay {
+.job__container {
+    position: relative;
+}
+
+.job__overlay {
+    position: absolute;
+    width: 370px;
+    bottom: 0;
+    left: 0;
+}
+
+.job__text {
     color: var(--main-contrast-color);
     font-weight: 700;
     font-size: 14px;
@@ -329,46 +371,41 @@ p {
     padding-bottom: 27px;
 }
 
-.job-overlay-container {
-    position: absolute;
-    width: 370px;
-    bottom: 0;
-    left: 0;
-}
-
-.job-item-container {
-    position: relative;
-}
-
 /*========= Наша команда =========*/
-.section-title.team {
+.team-title {
     margin-bottom: 50px;
 }
-
-.team-container {
-    background-color: var(--main-contrast-color);
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.team {
+.team-section {
     background-color: var(--team-background-color);
 }
 
-.team-list {
+
+
+.team {
     display: flex;
 }
 
-.team-list .item {
+.team__item {
     box-shadow: var(--team-list-shadow);
     border-radius: 0px 0px 4px 4px;
 }
 
-.team-list .item:not(:last-child) {
+.team__item:not(:last-child) {
     margin-right: 30px;
 }
 
-.name {
+
+.team__photo {
+    display: block;
+}
+
+.team__container {
+    background-color: var(--main-contrast-color);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.team__name {
+    color: var(--header-color);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
@@ -376,28 +413,23 @@ p {
     margin-bottom: 10px;
 }
 
-.prof {
+.team__prof {
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
     margin-bottom: 16px;
 }
-
-.photo {
-    display: block;
-}
-
-.name-social-link {
+.team-link {
     display: block;
     display: flex;
     justify-content: center;
 }
 
-.name-social-link .item-link:not(:last-child) {
+.team-link__item:not(:last-child) {
     margin-right: 10px;
 }
 
-.name-social-link .link {
+.team-link__link {
     color: var(--icon-color);
     padding: 0;
     width: 44px;
@@ -410,33 +442,34 @@ p {
 
     transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
 }
-
-.icon {
-    fill: currentColor;
-    margin: auto auto;
-}
-
-.name-social-link .link:hover,
-.name-social-link .link:focus {
+.team-link__link:hover,
+.team-link__link:focus {
     color: var(--main-contrast-color);
     background-color: var(--main-active-color);
 }
 
+.team-link__icon {
+    fill: currentColor;
+    margin: auto auto;
+}
+
+
+
 /*======== Постоянные клиенты =======*/
-.clients {
+.clients-section {
     background-color: var(--main-contrast-color);
 }
 
-.list-clients {
+.clients {
     display: flex;
     margin-top: 50px;
 }
 
-.list-clients .item:not(:last-child) {
+.clients__item:not(:last-child) {
     margin-right: 30px;
 }
 
-.button-clients {
+.clients__link {
     display: block;
     width: 170px;
     height: 92px;
@@ -445,37 +478,28 @@ p {
     border: 1px solid var(--icon-color);
     border-radius: 4px;
     cursor: pointer;
-
     transition: border 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
-.icon-clients {
-    fill: currentColor;
-}
-
-.button-clients:hover,
-.button-clients:focus {
+.clients__link:hover,
+.clients__link:focus {
     border: 1px solid var(--main-active-color);
     color: var(--main-active-color);
 }
 
+.clients__icon {
+    fill: currentColor;
+}
+
+
 /*========= Футер ========= */
-.main-footer {
+.footer {
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: var(--dark-background-color);
 }
-
-.logo-white {
-    color: var(--main-contrast-color);
-}
-
-.address-link {
-    color: var(--main-contrast-color);
-    font-size: 14px;
-    line-height: 1.7;
-
-    transition: background-color 250ms var(--timing-function);
+.footer__container {
+    display: flex;
 }
 
 .address {
@@ -483,7 +507,19 @@ p {
     margin-bottom: 9px;
 }
 
-.footer-contacts .link {
+.address__link {
+    color: var(--main-contrast-color);
+    font-size: 14px;
+    line-height: 1.7;
+
+    transition: background-color 250ms var(--timing-function);
+}
+
+.address__link:hover,
+.address__link:focus {
+    color: var(--main-active-color);
+}
+.address-contacts__link {
     color: var(--footer-mail-tel-color);
     font-size: 14px;
     line-height: 1.7;
@@ -491,12 +527,22 @@ p {
     transition: background-color 250ms var(--timing-function);
 }
 
-.link.first {
+.address-contacts__link:hover,
+.address-contacts__link:focus{
+    color: var(--main-active-color);
+}
+
+
+.address-contacts__link--first {
     display: inline-block;
     margin-bottom: 9px;
 }
 
-.p-network {
+.social-net-container {
+    display: block;
+    margin-left: 70px;
+}
+.social-net-container__slogan, .subscribe-container__slogan {
     color: var(--main-contrast-color);
     font-weight: 700;
     font-size: 14px;
@@ -506,32 +552,19 @@ p {
     padding-top: 12px;
 }
 
-.footer-container {
-    display: flex;
-}
 
-.social-network {
-    display: block;
-    margin-left: 70px;
-}
 
-.social-network-list {
+.social-net {
     display: block;
     display: flex;
     margin-top: 20px;
 }
 
-.social-network-list .item:not(:last-child) {
+.social-net__item:not(:last-child) {
     margin-right: 10px;
 }
-
-.icon-footer {
-    fill: var(--main-contrast-color);
-    margin: auto auto;
-}
-
-.social-network-list .link {
-    background-color: rgba(255, 255, 255, 0.1);
+.social-net__link {
+    background-color: var(--social-network-bgc);
     padding: 0;
     width: 44px;
     height: 44px;
@@ -544,12 +577,17 @@ p {
     transition: background-color 250ms var(--timing-function);
 }
 
-.social-network-list .link:hover,
-.social-network-list .link:focus {
+.social-net__link:hover,
+.social-net__link:focus {
     background-color: var(--main-active-color);
 }
+.social-net__icon {
+    fill: var(--main-contrast-color);
+    margin: auto auto;
+}
 
-.subscribe-footer {
+
+.subscribe-container {
     display: block;
     margin-left: 93px;
 }
@@ -559,41 +597,21 @@ p {
     margin-top: 20px;
 }
 
-.subscribe-button {
-    display: inline-block;
+.user-email-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 12px;
-
-    color: var(--main-contrast-color);
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-    letter-spacing: 0.06em;
-    background-color: var(--main-active-color);
-
-    padding: 5px 16px;
-    min-width: 200px;
-    min-height: 50px;
-    box-shadow: 0px 4px 4px var(--button-hero-shadow);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
-.icon-send {
+.user-email-wrapper__icon {
     fill: var(--main-contrast-color);
     margin-left: 10px;
     height: 24px;
     width: 24px;
 }
 
-.user-email-input {
+.user-email-wrapper__input {
     width: 358px;
     height: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--user-mail-input-border);
     box-sizing: border-box;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
@@ -602,12 +620,12 @@ p {
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: 0.03em;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--footer-mail-tel-color);
     background-color: #2F303A;
     padding-left: 16px;
 }
 
-.user-email-input::placeholder {
+.user-email-wrapper__input::placeholder {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.25;
@@ -616,9 +634,6 @@ p {
 
 }
 
-.user-email-wrapper {
-    display: flex;
-}
 
 /*=============== Страница Портфолио ================ */
 
@@ -946,19 +961,7 @@ p {
     background-image: url(../images/check.svg);
 }
 
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
 
-}
 
 .checkbox-link {
     font-weight: 400;
