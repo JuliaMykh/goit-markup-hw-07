@@ -15,7 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
     <!-- Хедер -->
@@ -605,71 +605,71 @@
     </footer>
     <!-- Модальное окно -->
     <div class="backdrop is-hidden" data-modal>
-      <div class="modal">
+      <div class="backdrop__modal">
         <div>
-          <p class="header-modal">Оставьте свои данные, мы вам перезвоним</p>
-          <form class="form-modal">
-            <div class="form-field">
-              <label class="label-modal" for="name">Имя</label>
-              <div class="input-icon-wrapper">
-                <input class="input-modal" type="text" name="name" id="name" required />
-                <svg class="icon-modal">
+          <p class="backdrop__header">Оставьте свои данные, мы вам перезвоним</p>
+          <form class="form">
+            <div class="form__field">
+              <label class="form__label" for="name">Имя</label>
+              <div class="form__wrapper">
+                <input class="form__input" type="text" name="name" id="name" required />
+                <svg class="form__icon">
                   <use href="./images/sprite.svg#icon-person"></use>
                 </svg>
               </div>
             </div>
-            <div class="form-field">
-              <label class="label-modal" for="tel">Телефон</label>
-              <div class="input-icon-wrapper">
+            <div class="form__field">
+              <label class="form__label" for="tel">Телефон</label>
+              <div class="form__wrapper">
                 <input
-                  class="input-modal"
+                  class="form__input"
                   type="tel"
                   name="tel"
                   id="tel"
                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
                   required
                 />
-                <svg class="icon-modal">
+                <svg class="form__icon">
                   <use href="./images/sprite.svg#icon-phone"></use>
                 </svg>
               </div>
             </div>
-            <div class="form-field">
-              <label class="label-modal" for="mail">Почта</label>
-              <div class="input-icon-wrapper">
-                <input class="input-modal" type="email" name="email" id="mail" required />
-                <svg class="icon-modal">
+            <div class="form__field">
+              <label class="form__label" for="mail">Почта</label>
+              <div class="form__wrapper">
+                <input class="form__input" type="email" name="email" id="mail" required />
+                <svg class="form__icon">
                   <use href="./images/sprite.svg#icon-email"></use>
                 </svg>
               </div>
             </div>
-            <div class="form-field">
-              <label class="label-modal" for="comment">Комментарий</label>
+            <div class="form__field">
+              <label class="form__label" for="comment">Комментарий</label>
               <textarea
-                class="comments-modal"
+                class="form__comments"
                 name="comment"
                 id="comment"
                 placeholder="Введите текст"
               ></textarea>
             </div>
-            <div class="checkbox-wrapper">
+            <div class="checkbox">
               <input
-                class="checkbox-input visually-hidden"
+                class="checkbox__input visually-hidden"
                 type="checkbox"
                 id="checkbox"
                 required
               />
-              <label class="checkbox-lable" for="checkbox"
+              <label class="checkbox__lable" for="checkbox"
                 >Соглашаюсь с рассылкой и принимаю&nbsp;
-                <a class="checkbox-link" href=""> Условия договора</a></label
+                <a class="checkbox__link" href=""> Условия договора</a></label
               >
             </div>
 
-            <button class="btn-modal-send" type="submit">Отправить</button>
+            <button class="button form__btn" type="submit">Отправить</button>
           </form>
         </div>
         <button class="button-modal" data-modal-close>
-          <svg class="icon-modal-close" width="17" height="17">
+          <svg class="button-modal__icon" width="17" height="17">
             <use href="./images/sprite.svg#icon-close"></use>
           </svg>
         </button>
