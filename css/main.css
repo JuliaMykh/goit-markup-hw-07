@@ -40,6 +40,18 @@
   overflow: hidden;
 }
 
+.site-nav__link, .contacts__link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: var(--header-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  transition: background-color 250ms var(--timing-function);
+}
+
 body {
   background-color: var(--main-contrast-color);
   color: var(--text-color);
@@ -157,20 +169,7 @@ p {
   margin-right: 50px;
 }
 
-.site-nav__link {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  color: var(--header-color);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  transition: background-color 250ms var(--timing-function);
-}
-
-.site-nav__link:hover,
-.site-nav__link:focus {
+.site-nav__link:hover, .site-nav__link:focus {
   color: var(--main-active-color);
 }
 
@@ -209,20 +208,10 @@ p {
 }
 
 .contacts__link {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  color: var(--header-color);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  transition: background-color 250ms var(--timing-function);
   color: var(--text-color);
 }
 
-.contacts__link:hover,
-.contacts__link:focus {
+.contacts__link:hover, .contacts__link:focus {
   color: var(--main-active-color);
 }
 
@@ -240,8 +229,7 @@ p {
   transition: color 250ms var(--timing-function);
 }
 
-.contacts__icon--envelope:hover,
-.contacts__icon--envelope:focus {
+.contacts__icon--envelope:hover, .contacts__icon--envelope:focus {
   color: var(--main-active-color);
 }
 
@@ -427,8 +415,7 @@ p {
   transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
-.team-link__link:hover,
-.team-link__link:focus {
+.team-link__link:hover, .team-link__link:focus {
   color: var(--main-contrast-color);
   background-color: var(--main-active-color);
 }
@@ -463,8 +450,7 @@ p {
   transition: border 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
-.clients__link:hover,
-.clients__link:focus {
+.clients__link:hover, .clients__link:focus {
   border: 1px solid var(--main-active-color);
   color: var(--main-active-color);
 }
@@ -637,8 +623,7 @@ p {
   cursor: pointer;
 }
 
-.buttons-port__btn:hover,
-.buttons-port__btn:focus {
+.buttons-port__btn:hover, .buttons-port__btn:focus {
   color: var(--main-contrast-color);
   background-color: var(--main-active-color);
   box-shadow: var(--button-portfolio-shadow);
@@ -800,10 +785,6 @@ p {
   border-color: var(--main-active-color);
 }
 
-.form__input:focus + .form__icon {
-  fill: var(--main-active-color);
-}
-
 .form__icon {
   display: block;
   position: absolute;
@@ -814,6 +795,10 @@ p {
   transform: translateY(-50%);
   margin-left: 12px;
   transition: fill 250ms var(--timing-function);
+}
+
+.form__input:focus + .form__icon {
+  fill: var(--main-active-color);
 }
 
 .form__wrapper {

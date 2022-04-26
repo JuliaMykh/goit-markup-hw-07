@@ -21,12 +21,13 @@
     border-radius: 4px;
     cursor: pointer;
     transition: border 250ms var(--timing-function), color 250ms var(--timing-function);
-}
+    
+    &:hover,
+    &:focus {
+        border: 1px solid var(--main-active-color);
+        color: var(--main-active-color);
+    }
 
-.clients__link:hover,
-.clients__link:focus {
-    border: 1px solid var(--main-active-color);
-    color: var(--main-active-color);
 }
 
 .clients__icon {

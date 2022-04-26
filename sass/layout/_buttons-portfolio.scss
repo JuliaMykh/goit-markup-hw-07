@@ -23,11 +23,14 @@
     border-radius: 4px;
     padding: 6px 22px;
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: var(--main-contrast-color);
+        background-color: var(--main-active-color);
+        box-shadow: var(--button-portfolio-shadow);
+    }
+
 }
 
-.buttons-port__btn:hover,
-.buttons-port__btn:focus {
-    color: var(--main-contrast-color);
-    background-color: var(--main-active-color);
-    box-shadow: var(--button-portfolio-shadow);
-}
+

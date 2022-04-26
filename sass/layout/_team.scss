@@ -13,10 +13,10 @@
 .team__item {
     box-shadow: var(--team-list-shadow);
     border-radius: 0px 0px 4px 4px;
-}
 
-.team__item:not(:last-child) {
-    margin-right: 30px;
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
 }
 
 .team__photo {
@@ -67,12 +67,12 @@
     display: flex;
 
     transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
-}
 
-.team-link__link:hover,
-.team-link__link:focus {
-    color: var(--main-contrast-color);
-    background-color: var(--main-active-color);
+    &:hover,
+    &:focus {
+        color: var(--main-contrast-color);
+        background-color: var(--main-active-color);
+    }
 }
 
 .team-link__icon {
